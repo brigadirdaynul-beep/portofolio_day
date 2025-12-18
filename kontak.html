@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontak — WebsiteKU</title>
+
+  <!-- font sama seperti halaman lain -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS eksternal (pakai yang sama untuk seluruh situs) -->
+<style>
+    :root{
+  --page-bg: #f3f5f7;
+  --card-bg: #fff;
+  --text: #111;
+  --muted: #6f7377;
+  --accent: #355dbf;
+  --card-radius: 14px;
+  --maxw: 760px;
+  --shadow: 0 8px 22px rgba(16,24,40,0.06);
+  --border: rgba(0,0,0,0.12);
+  --input-border: rgba(0,0,0,0.12);
+}
+
+/* Reset ringan */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  padding:32px 22px;
+  background:var(--page-bg);
+  font-family:"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+/* Card utama */
+.page-wrap{ width:100%; display:flex; justify-content:center; }
+.card{
+  width:100%;
+  max-width:var(--maxw);
+  background:var(--card-bg);
+  border-radius:18px;
+  padding:30px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+/* HEADER: judul di atas, nav di bawah dan rata kiri */
+.top{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+}
+.brand{
+  margin:0;
+  font-size:34px;
+  font-weight:800;
+  letter-spacing:-0.6px;
+}
+.nav{
+  display:flex;
+  gap:18px;
+  margin-top:4px;
+}
+.nav-link{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  font-size:15px;
+}
+.nav-link:hover{ color:var(--accent); }
+
+/* Konten kontak */
+.contact{
+  margin-top:14px;
+}
+.contact-title{
+  margin:10px 0 8px 0;
+  font-size:20px;
+  font-weight:800;
+}
+
+/* lead paragraph (deskripsi) */
+.lead{
+  margin:8px 0 18px 0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* FORM */
+.contact-form{
+  max-width:100%;
+}
+
+/* label */
+.field-label{
+  display:block;
+  margin:10px 0 6px 0;
+  font-weight:700;
+  color:var(--text);
+  font-size:14px;
+}
+
+/* inputs */
+.input, .textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--input-border);
+  border-radius:8px;
+  font-size:14px;
+  outline:none;
+  background:#fff;
+  box-shadow:none;
+  transition:box-shadow .12s, border-color .12s;
+}
+.input::placeholder, .textarea::placeholder{
+  color:#bbb;
+}
+
+/* textarea specific */
+.textarea{
+  resize:vertical;
+  min-height:110px;
+}
+
+/* fokus style */
+.input:focus, .textarea:focus{
+  border-color: rgba(53,93,191,0.18);
+  box-shadow: 0 4px 14px rgba(53,93,191,0.06);
+}
+
+/* tombol */
+.btn{
+  margin-top:12px;
+  display:inline-block;
+  background:#efefef;
+  border:1px solid rgba(0,0,0,0.06);
+  color:#222;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:14px;
+}
+.btn:hover{
+  background:#e3e3e3;
+}
+
+/* back link and footer */
+.back{ margin-top:14px; }
+.back-link{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:14px;
+}
+.back-link:hover{ text-decoration:underline; }
+
+.foot{
+  margin-top:20px;
+  padding-top:12px;
+  color:var(--muted);
+  font-size:13px;
+  border-top:1px solid rgba(0,0,0,0.04);
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .card{ padding:20px; }
+  .brand{ font-size:28px; }
+  .nav{ gap:12px; }
+  .contact-title{ font-size:18px; }
+  .input, .textarea{ font-size:13px; }
+  .about-photo img{ width:160px; height:200px; } /* jika halaman tentang menggunakan foto */
+}
+
+</style>
+</head>
+<body>
+  <div class="page-wrap">
+    <main class="card" role="main">
+      <header class="top">
+        <h1 class="brand">Kontak</h1>
+
+        <nav class="nav" aria-label="Navigasi utama">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="tentang.html">Tentang</a>
+          <a class="nav-link" href="kontak.html">Kontak</a>
+        </nav>
+      </header>
+
+      <section class="contact">
+        <h2 class="contact-title">Hubungi Kami</h2>
+
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae ipsum tempus, fermentum ligula at.
+        </p>
+
+        <form class="contact-form" action="#" method="post" onsubmit="alert('Form tidak dikirim — ini demo.'); return false;">
+          <label for="name" class="field-label">Nama</label>
+          <input id="name" name="name" type="text" placeholder="Masukkan nama" class="input">
+
+          <label for="email" class="field-label">Email</label>
+          <input id="email" name="email" type="email" placeholder="Masukkan email" class="input">
+
+          <label for="message" class="field-label">Pesan</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tulis pesan anda..." class="textarea"></textarea>
+
+          <button type="submit" class="btn">Kirim</button>
+        </form>
+      </section>
+
+      <p class="back">
+        <a href="home.html" class="back-link">← Kembali ke Home</a>
+      </p>
+
+      <footer class="foot">© 2024 Website Sederhana</footer>
+    </main>
+  </div>
+</body>
+</html>
+
+
+
+
+        </main>
+    </div>
+</body>
+</html>

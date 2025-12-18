@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang — WebsiteKU</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="gpttentang.css">
+  <style>
+    :root{
+  --page-bg: #f3f5f7;
+  --card-bg: #fff;
+  --text: #111;
+  --muted: #6f7377;
+  --accent: #355dbf;
+  --card-radius: 14px;
+  --maxw: 760px;
+  --shadow: 0 8px 22px rgba(16,24,40,0.06);
+  --border: rgba(0,0,0,0.12);
+}
+
+/* Reset ringan */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  padding:32px 22px;
+  background:var(--page-bg);
+  font-family:"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+/* Card utama */
+.page-wrap{ width:100%; display:flex; justify-content:center; }
+.card{
+  width:100%;
+  max-width:var(--maxw);
+  background:var(--card-bg);
+  border-radius:18px;
+  padding:30px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+/* Header */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.top{
+  display:flex;
+  flex-direction:column;     /* MENU BERADA DI BAWAH JUDUL & RATA KIRI */
+  align-items:flex-start;    /* RATA KIRI */
+  gap:6px;
+}
+
+.brand{
+  margin:0;
+  font-size:34px;
+  font-weight:800;
+  letter-spacing:-0.6px;
+}
+.nav{
+  display:flex;
+  gap:18px;
+  margin-top:6px;
+  align-items:center;
+}
+.nav-link{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  font-size:15px;
+}
+.nav-link:hover{ color:var(--accent); }
+
+/* About section: teks kiri, foto kanan */
+.about{
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  margin-top:12px;
+}
+.about-text{ flex:1; }
+.about-text p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* Photo pada kanan */
+.about-photo img{
+  width:150px;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+/* Judul Biodata */
+.section-title{
+  margin-top:28px;
+  margin-bottom:8px;
+  font-size:18px;
+  font-weight:700;
+}
+
+/* Tabel biodata */
+.bio-table{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid var(--border);
+  margin-top:8px;
+}
+.bio-table th{
+  width:220px;
+  padding:14px 12px;
+  text-align:center;
+  font-weight:700;
+  background:#fff;
+  border-right:1px solid var(--border);
+  vertical-align:middle;
+}
+.bio-table td{
+  padding:14px 16px;
+  vertical-align:middle;
+  text-align:left;
+}
+.bio-table tr + tr th, .bio-table tr + tr td{
+  border-top:1px solid var(--border);
+}
+
+/* Back link */
+.back{ margin-top:14px; }
+.back-link{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:14px;
+}
+.back-link:hover{ text-decoration:underline; }
+
+/* Footer */
+.foot{
+  margin-top:20px;
+  padding-top:12px;
+  color:var(--muted);
+  font-size:13px;
+  border-top:1px solid rgba(0,0,0,0.04);
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .card{ padding:20px; }
+  .brand{ font-size:28px; }
+  .about{ flex-direction:column; align-items:center; text-align:center; gap:14px; }
+  .about-photo img{ width:160px; height:200px; }
+  .about-text p{ text-align:center; }
+  .bio-table th{ width:160px; }
+  .bio-table td, .bio-table th{ padding:10px; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <main class="card" role="main">
+      <header class="top">
+        <h1 class="brand">Tentang</h1>
+
+        <nav class="nav" aria-label="navigasi utama">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="tentang.html">Tentang</a>
+          <a class="nav-link" href="kontak.html">Kontak</a>
+        </nav>
+      </header>
+
+      <!-- Konten: paragraf kiri, foto kanan -->
+      <section class="about">
+        <div class="about-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisl ut tortor cursus fermentum. Nulla euismod velit at magna maximus.
+          </p>
+        </div>
+
+        <figure class="about-photo" aria-hidden="false">
+          <!-- Ganti src dengan foto Anda (direct image) -->
+          <img src="WhatsApp Image 2025-12-11 at 09.24.00_8b1f910d.jpg" alt="Foto profil">
+        </figure>
+      </section>
+
+      <h3 class="section-title">Biodata</h3>
+
+      <table class="bio-table" role="table" aria-label="Biodata">
+        <tbody>
+          <tr>
+            <th scope="row">Nama</th>
+            <td>Daenul Ashari</td>
+          </tr>
+           <tr>
+            <th scope="row">Tanggal Lahir</th>
+            <td>11-10-2005</td>
+          </tr>
+          <tr>
+            <th scope="row">NIM</th>
+            <td>24TF011</td>
+          </tr>
+          <tr>
+            <th scope="row">Program Studi</th>
+            <td>Teknologi Informasi</td>
+          </tr>
+          <tr>
+            <th scope="row">Hobi</th>
+            <td>Mancing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="back">
+        <a href="home.html" class="back-link">← Kembali ke Home</a>
+      </p>
+
+      <footer class="foot">© 2024 Website Sederhana</footer>
+    </main>
+  </div>
+</body>
+</html>
